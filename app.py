@@ -9,7 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model("C:\Users\HP\OneDrive\Desktop\Dog_Cat\saved_model\model_1") 
+    model = tf.keras.models.load_model("saved_model\model_1") 
     return model
 
 model = load_model()
