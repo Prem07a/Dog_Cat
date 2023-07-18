@@ -5,7 +5,7 @@ import numpy as np
 
 class_names = ["Cat", "Dog"]
 
-model_path = '/content/drive/MyDrive/Dog_Cat/model_train_5'
+model_path = './model_train_5'
 model = tf.keras.models.load_model(model_path)
 
 def predict(image):
