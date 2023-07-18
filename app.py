@@ -3,37 +3,32 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 
-CLASS_NAMES = ["Cat", "Dog"]
+class_names = ["Cat", "Dog"]
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
+model_path = '/content/drive/MyDrive/Dog_Cat/model_train_4'
+model = tf.keras.models.load_model(model_path)
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    model = tf.keras.models.load_model("model_3_80x80") 
-    return model
+def predict(image):
+    image = image.resize((80, 80))
+    image_array = tf.keras.preprocessing.image.img_to_array(image)
+    image_array = tf.expand_dims(image_array, 0)
+    prediction = model.predict(image_array)
+    predicted_class = class_names[np.argmax(prediction[0])]
+    confidence = int(np.max(prediction[0]) * 100)
+    return predicted_class, confidence
 
-model = load_model()
+def main():
+    st.title("Cat and Dog Classifier")
+    file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
-st.write("# Cat and Dog Classification")
+    if file is not None:
+        image = Image.open(file)
+        st.image(image, caption="Uploaded Image", use_column_width=True)
 
-file = st.file_uploader("Please Upload an Image of a Cat or Dog", type=["jpg", "png"])
+        if st.button("Classify"):
+            predicted_class, confidence = predict(image)
+            st.write(f"Predicted class: {predicted_class}")
+            st.write(f"Confidence: {confidence}%")
 
-def import_and_predict(image, model):
-    size = (80, 80)
-    image = ImageOps.fit(image, size, Image.ANTIALIAS)
-    img = np.asarray(image)
-    img_reshape = img[np.newaxis, ...]
-    model_output = model.predict(img_reshape)
-    return model_output
-
-if file is None:
-    st.text("Please upload an image file")
-else:
-    image = Image.open(file)
-    st.image(image, use_column_width=True)
-    model_output = import_and_predict(image, model)
-    confidence = np.max(model_output) * 100
-    prediction_index = np.argmax(model_output)
-    prediction_label = CLASS_NAMES[prediction_index]
-    string = f"This image is classified as: {prediction_label} with confidence: {confidence:.2f}%"
-    st.success(string)
+if __name__ == "__main__":
+    main()
