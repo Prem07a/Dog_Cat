@@ -5,11 +5,8 @@ import numpy as np
 
 class_names = ["Cat", "Dog"]
 
-<<<<<<< HEAD
 model_path = './model_train_7'
-=======
-model_path = './model_train_5'
->>>>>>> 43fead847bba78fbe57d9628ee96636b63cdafb4
+
 model = tf.keras.models.load_model(model_path)
 
 def predict(image):
