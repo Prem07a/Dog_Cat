@@ -36,8 +36,62 @@ def code_page():
 
 def about_me_page():
     st.title("About Me")
-    st.write("My name is Prem Gaikwad, and I am currently pursuing my BE degree in Electronics and Telecommunication Engineering from PICT (Pune Institute of Computer Technology). I have a passion for machine learning and data science, and I love expanding my knowledge by working on projects. This cat and dog classification project is one of my endeavors to learn and apply convolutional neural networks (CNNs) in image classification. I enjoy understanding concepts through practical implementation and believe in the power of data science and analytics to derive insights from data. Feel free to explore this project and learn alongside me!")
-    
+    st.write("My name is Prem Gaikwad, and I am currently pursuing my Bachelor of Engineering degree in Electronics and Telecommunication Engineering (EnTE) from Pune Institute of Computer Technology (PICT), affiliated to Pune University. I am expected to graduate in June 2025.")
+
+    st.header("Education Background")
+    st.subheader("Pune Institute of Computer Technology")
+    st.write("- Pune, Maharashtra")
+    st.write("- Bachelor of Engineering (EnTE)")
+    st.write("- Expected - June 2025")
+
+    st.subheader("The Vatsalya School, Pune (CBSE Board)")
+    st.write("- Pune, Maharashtra")
+    st.write("- 12th Grade")
+    st.write("- Year of Completion: 2021")
+    st.write("- Percentage: 82%")
+
+    st.subheader("City International School, Pune (CBSE Board)")
+    st.write("- Pune, Maharashtra")
+    st.write("- 10th Grade")
+    st.write("- Year of Completion: 2019")
+    st.write("- Percentage: 92.2%")
+
+    st.header("Projects")
+    st.write("1. AI Snake Game")
+    st.write("   - Feb 2023 - Feb 2023")
+    st.write("   - Code: [GitHub Repository](https://github.com/Prem07a/AI_Snake)")
+    st.write("   - Description: I created an AI model based on the concept of Reinforcement Learning. The AI trained itself to play the snake game and learned from its mistakes.")
+
+    st.write("2. Dog Breed Classification Using PyTorch")
+    st.write("   - Dec 2022 - Jan 2023")
+    st.write("   - Code: [GitHub Repository](https://github.com/Prem07a/Dog-breed-classification)")
+    st.write("   - Description: I created a model that can predict the breed of a dog based on its image. The model was built using PyTorch and transfer learning.")
+
+    st.write("3. Bulldozer Price Prediction using Machine Learning")
+    st.write("   - Oct 2022 - Oct 2022")
+    st.write("   - Code: [Kaggle Notebook](https://www.kaggle.com/code/premgaikwad07/time-series-bulldozer-price-prediction)")
+    st.write("   - Description: I developed an ML model to predict the price of bulldozers based on various factors. The model was built using Python and the Scikit-Learn library.")
+
+    st.write("4. Heart Disease Classification using Machine Learning")
+    st.write("   - Oct 2022 - Oct 2022")
+    st.write("   - Code: [Kaggle Notebook](https://www.kaggle.com/code/premgaikwad07/classification-modelling-heart-disease)")
+    st.write("   - Description: I created an ML model to classify whether a person has heart disease or not based on certain factors. The model was trained on historical data and built using Python and the Scikit-Learn library.")
+
+    st.header("Skills")
+    st.write("Programming Languages: Python, C, C++")
+    st.write("Machine Learning: Regression, Classification, Decision Tree, Linear Models, Ensemble Methods")
+    st.write("Deep Learning: Artificial Neural Networks (ANN), Recurrent Neural Networks (RNN), Convolutional Neural Networks (CNN)")
+    st.write("Libraries: NumPy, Pandas, Matplotlib, Sci-kit Learn, PyTorch, TensorFlow")
+    st.write("Computer Literacy: Microsoft Office, Mail Merge, Google Workspace")
+    st.write("Languages: English, Hindi, Marathi")
+
+    st.header("Future Goal")
+    st.write("To become an AI/ML engineer")
+
+    st.write("Feel free to explore the provided links to access the code and learn more about these projects!")
+
+    st.write("Thank you for visiting my page and learning more about me!")
+  
 def main():
     pages = {
         "Image Prediction": prediction_page,
