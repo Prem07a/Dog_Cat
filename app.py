@@ -3,7 +3,7 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 
-class_names = ["Dog","Cat"]
+class_names = ["Cat", "Dog"]
 
 model_path = './model_train_5'
 model = tf.keras.models.load_model(model_path)
