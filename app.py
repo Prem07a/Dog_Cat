@@ -9,7 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model("model_1") 
+    model = tf.keras.models.load_model("model_3_80x80") 
     return model
 
 model = load_model()
@@ -19,7 +19,7 @@ st.write("# Cat and Dog Classification")
 file = st.file_uploader("Please Upload an Image of a Cat or Dog", type=["jpg", "png"])
 
 def import_and_predict(image, model):
-    size = (256, 256)
+    size = (80, 80)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     img = np.asarray(image)
     img_reshape = img[np.newaxis, ...]
