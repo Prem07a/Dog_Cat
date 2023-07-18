@@ -19,7 +19,7 @@ st.write("# Cat and Dog Classification")
 file = st.file_uploader("Please Upload an Image of a Cat or Dog", type=["jpg", "png"])
 
 def import_and_predict(image, model):
-    size = (80, 80)
+    size = (96, 96)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     img = np.asarray(image)
     img_reshape = img[np.newaxis, ...]
