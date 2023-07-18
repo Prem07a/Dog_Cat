@@ -54,82 +54,72 @@ def main():
 def code_page():
     st.title("Code and Explanations")
 
-    st.header("Data Preprocessing")
+    st.header("Importing Libraries")
     st.code("""
     import os
+    import zipfile
+    import shutil
+    import tensorflow as tf
+    from tensorflow.keras import models, layers
+    """)
+
+    st.header("Data Preprocessing")
+    st.subheader("Setting up Environment")
+    st.code("""
     os.environ['KAGGLE_CONFIG_DIR'] = '/content'
     from google.colab import drive
     drive.mount('/content/drive')
+    """)
 
+    st.subheader("Downloading the Dataset")
+    st.code("""
     !kaggle competitions download -c dogs-vs-cats -p /content/drive/MyDrive/Dog_Cat
-    import zipfile
-    import os
+    """)
 
-    # Define the paths
+    st.subheader("Extracting the Dataset")
+    st.code("""
     dogs_vs_cats_zip_path = '/content/drive/MyDrive/Dog_Cat/dogs-vs-cats.zip'
     output_folder_path = '/content/drive/MyDrive/Dog_Cat'
 
-    # Extract the dogs-vs-cats.zip file
     with zipfile.ZipFile(dogs_vs_cats_zip_path, 'r') as zip_ref:
         zip_ref.extractall(output_folder_path)
 
-    # Define the path to the train.zip file
     train_zip_path = os.path.join(output_folder_path, 'train.zip')
 
-    # Extract the train.zip file
     with zipfile.ZipFile(train_zip_path, 'r') as zip_ref:
         zip_ref.extractall(output_folder_path)
     """)
-    st.write("In this code block, we first set up the necessary environment and mount Google Drive. Then, we download the dataset from the Kaggle competition and specify the paths for the zip files. Next, we extract the 'dogs-vs-cats.zip' file and the 'train.zip' file, which contains the training images. This preprocessing step is required to obtain the dataset for training our cat and dog classifier.")
 
     st.header("Image Data Organization")
     st.code("""
-    import os
-    import shutil
-
-    # Path to the 'train' folder in Google Drive
     train_folder = '/content/drive/MyDrive/Dog_Cat/train'
-
-    # Destination folders for cat and dog images
     cat_folder = '/content/drive/MyDrive/Dog_Cat/train1/cat'
     dog_folder = '/content/drive/MyDrive/Dog_Cat/train1/dog'
 
-    # Create the cat and dog folders if they don't exist
     os.makedirs(cat_folder, exist_ok=True)
     os.makedirs(dog_folder, exist_ok=True)
 
-    # Iterate over the files in the train folder
     for filename in os.listdir(train_folder):
-        # Construct the source and destination paths
         src_path = os.path.join(train_folder, filename)
 
-        # Skip directories
         if os.path.isdir(src_path):
             continue
 
-        # Extract the class label from the filename
         label = filename.split('.')[0]
 
-        # Define the destination folder based on the class label
         if label == 'cat':
             dest_folder = cat_folder
         elif label == 'dog':
             dest_folder = dog_folder
         else:
-            continue  # Skip files with unrecognized labels
+            continue
 
-        # Move the image to the respective cat or dog folder
         shutil.move(src_path, dest_folder)
     """)
-    st.write("In this code block, we organize the training images into separate cat and dog folders. We iterate over the files in the 'train' folder and move each image to the corresponding cat or dog folder based on its label. This step is important to create the necessary directory structure for the dataset.")
 
     st.header("Model Training")
+    st.subheader("Loading and Preprocessing the Dataset")
     st.code("""
-    import tensorflow as tf
-    from tensorflow.keras import models, layers
-    import matplotlib.pyplot as plt
-    import numpy as np
-
     IMAGE_SIZE = 80
     BATCH_SIZE = 32
     CHANNELS = 3
@@ -138,20 +128,20 @@ def code_page():
     dataset = tf.keras.preprocessing.image_dataset_from_directory(
         "/content/drive/MyDrive/Dog_Cat/train",
         shuffle=True,
-        image_size = (IMAGE_SIZE, IMAGE_SIZE),
-        batch_size = BATCH_SIZE
+        image_size=(IMAGE_SIZE, IMAGE_SIZE),
+        batch_size=BATCH_SIZE
     )
+    """)
 
-    class_names = dataset.class_names
-
-    # Train test val split function
+    st.subheader("Train-Validation-Test Split")
+    st.code("""
     def get_dataset_partitions_tf(ds, train_split=0.8, val_split=0.1, test_split=0.1, shuffle=True, shuffle_size=10000):
         ds_size = len(dataset)
         if shuffle:
             ds = ds.shuffle(shuffle_size)
 
-        train_size = int(train_split*ds_size)
-        val_size = int(val_split*ds_size)
+        train_size = int(train_split * ds_size)
+        val_size = int(val_split * ds_size)
 
         train_ds = ds.take(train_size)
         val_ds = ds.skip(train_size).take(val_size)
@@ -161,20 +151,25 @@ def code_page():
         return train_ds, val_ds, test_ds
 
     train_ds, val_ds, test_ds = get_dataset_partitions_tf(dataset)
+    """)
 
-    # Data preprocessing
+    st.subheader("Data Preprocessing")
+    st.code("""
     resize_and_rescale = tf.keras.Sequential([
         layers.experimental.preprocessing.Resizing(IMAGE_SIZE, IMAGE_SIZE),
-        layers.experimental.preprocessing.Rescaling(1.0/255)
+        layers.experimental.preprocessing.Rescaling(1.0 / 255)
     ])
 
     data_augmentation = tf.keras.Sequential([
         layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
         layers.experimental.preprocessing.RandomRotation(0.2),
     ])
+    """)
 
+    st.subheader("Model Architecture")
+    st.code("""
     INPUT_SHAPE = (BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, CHANNELS)
-    n_classes = len(class_names)
+    n_classes = len(dataset.class_names)
 
     model = models.Sequential([
         resize_and_rescale,
@@ -203,7 +198,10 @@ def code_page():
         loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
         metrics=['accuracy']
     )
+    """)
 
+    st.subheader("Model Training")
+    st.code("""
     history = model.fit(
         train_ds,
         epochs=EPOCHS,
@@ -211,14 +209,14 @@ def code_page():
         verbose=1,
         validation_data=val_ds
     )
+    """)
 
+    st.subheader("Saving the Model")
+    st.code("""
     model_version = "model_train_4"
     model.save(f'/content/drive/MyDrive/Dog_Cat/{model_version}')
     """)
-    st.write("In this code block, we perform the model training using TensorFlow and Keras. We define the model architecture with convolutional and dense layers. We also define the data preprocessing steps, including resizing, rescaling, and data augmentation. The training dataset is split into training, validation, and test sets. The model is trained using the training set and evaluated on the validation set. Finally, the trained model is saved for future use.")
-
-    st.write("Feel free to explore the code further and modify it to suit your needs!")
-
+    
 if __name__ == "__main__":
     main()
 
