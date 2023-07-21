@@ -14,7 +14,8 @@ My name is Prem Gaikwad, and I am currently pursuing my Bachelor's degree in Ele
 
 - TensorFlow
 - Keras
-- Streamlit
+- FastApi
+- HTML, CSS & JS
 - Google Colab
 
 ### Data Preprocessing:
