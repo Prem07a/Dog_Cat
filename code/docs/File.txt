@@ -1,0 +1,7 @@
+Code Folder:
+
+It contains 2 Main Folders:
+
+1. python: This Folder has all codes used in model Development.
+
+2. website: This Folder contains code for webdev.
