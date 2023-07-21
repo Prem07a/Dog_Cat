@@ -5,7 +5,7 @@ import numpy as np
 
 class_names = ["Cat", "Dog"]
 
-model_path = './model_train_7'
+model_path = './models/model_train_7'
 
 model = tf.keras.models.load_model(model_path)
 
