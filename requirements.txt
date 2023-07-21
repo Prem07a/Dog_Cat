@@ -1,8 +1,6 @@
 # Core Libraries
 numpy
 pandas
-scipy
-scikit-learn
 uvicorn
 
 # Visualization
@@ -12,20 +10,10 @@ seaborn
 # Deep Learning Frameworks
 tensorflow
 keras
-torch
-torchvision
-
-# Natural Language Processing (NLP)
-nltk
-gensim
-spaCy
 
 # Computer Vision
 opencv-python
 Pillow
-
-# Feature Engineering
-featuretools
 
 # Data Visualization
 plotly
@@ -35,7 +23,5 @@ jupyter
 
 # Miscellaneous
 joblib
-pyyaml
-tqdm
 fastapi
 python-multipart
