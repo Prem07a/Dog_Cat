@@ -40,7 +40,7 @@ Once the model is trained, it is saved for future use. The Streamlit application
 To clone the project repository, use the following Git command:
 
 ```
-git clone <repository_url>
+git clone https://github.com/Prem07a/Dog_Cat.git
 ```
 
 ### Installing Dependencies:
