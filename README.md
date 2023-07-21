@@ -54,6 +54,6 @@ pip install -r requirements.txt
 
 Make sure you have Python and pip installed on your system before running the above command.
 
-`Note: Download `kaggle.json` from kaggle api in-order to download data if it is not extracted properly (Move it to kaggle folder which is in data folder).`
+`Note: Download kaggle.json from kaggle api in-order to download data if it is not extracted properly (Move it to kaggle folder which is in data folder).`
 ---
 
