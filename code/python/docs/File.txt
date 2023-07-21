@@ -1,0 +1,9 @@
+This Python Folder consist of two more Folders :
+
+1. data processing:
+>> This Folder contains jupyter notebooks which are used for data trasformation, exploartion and Loading
+
+2. model experiment:
+>> This Folder also contains jupyter notebooks which are used for model training and 
+   final testing to make the best model possible without transfer learning.
+

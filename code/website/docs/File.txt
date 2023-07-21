@@ -1,0 +1,13 @@
+This folder contains 2 Folder and 1 python file 
+
+1. static Folder:
+
+>> This folder contains all static files, CSS, IMAGES and VIDEOS.
+
+2. templates Folder:
+
+>> This folder contains html files.
+
+3. Python File:
+
+>> This is python file named main.py which is FastApi() code which works as backend framework for website.

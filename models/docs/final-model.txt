@@ -1,0 +1,4 @@
+The Final Model which was selected was Model_train_7 as it gave the best accuracy and loss score for all 2 
+train, test and validation.
+
+

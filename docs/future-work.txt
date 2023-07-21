@@ -1,0 +1,5 @@
+>> We can also use Transfer learning method which will give the best result.
+
+>> We can also try Tuning Hyperparameters to make Model_train_7 more perfect.
+
+>> Do more changes to images using data augmentation.
