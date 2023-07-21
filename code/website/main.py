@@ -72,5 +72,5 @@ async def predict(request: Request, file: UploadFile = File(...)):
 
     return templates.TemplateResponse("index.html", {"request": request, "result": {"class": predicted_class, "confidence": confidence, "image_base64": image_base64}})
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="localhost", port=8000, reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", host="localhost", port=8000, reload=True)

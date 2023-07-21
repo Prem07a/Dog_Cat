@@ -37,4 +37,4 @@ joblib
 pyyaml
 tqdm
 fastapi
-streamlit
+python-multipart
