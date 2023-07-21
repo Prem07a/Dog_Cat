@@ -1,5 +1,40 @@
-streamlit
+# Core Libraries
+numpy
+pandas
+scipy
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Deep Learning Frameworks
 tensorflow
+keras
+torch
+torchvision
+
+# Natural Language Processing (NLP)
+nltk
+gensim
+spaCy
+
+# Computer Vision
 opencv-python
 Pillow
-numpy
+
+# Feature Engineering
+featuretools
+
+# Data Visualization
+plotly
+
+# Jupyter Notebook (if using Jupyter)
+jupyter
+
+# Miscellaneous
+joblib
+pyyaml
+tqdm
+fastapi
+streamlit

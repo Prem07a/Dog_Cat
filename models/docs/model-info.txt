@@ -1,0 +1,82 @@
+1. Model_train_1:
+   - Training Date: 16th July 2023
+   - Training Data: 2500 images (1250 of dogs and 1250 of cats)
+   - Image Size: 256x256x3
+   - Epochs: 250
+   - Train Accuracy: 95%
+   - Validation Accuracy: 97%
+   - Test Accuracy: 93%
+   - Additional Info: 
+    * This model performed well on the training and validation datasets. 
+    * However, its accuracy dropped significantly when tested on new, unseen images.
+
+2. Model_train_2:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 96x96x3
+   - Epochs: 50
+   - Train Accuracy: 84%
+   - Validation Accuracy: 87%
+   - Test Accuracy: 86%
+   - Additional Info: 
+    * This model showed promising results and generalization capabilities. 
+    * To further explore performance, the image size was adjusted in subsequent models.
+
+3. Model_train_3:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 128x128x3
+   - Epochs: 50
+   - Train Accuracy: 85%
+   - Validation Accuracy: 87%
+   - Test Accuracy: 83%
+   - Additional Info:
+    * The increase in image size did not lead to improved performance. 
+    * Instead, the accuracy slightly decreased, suggesting the need for a different approach.
+
+4. Model_train_4:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 80x80x3
+   - Epochs: 50
+   - Train Accuracy: 86%
+   - Validation Accuracy: 87%
+   - Test Accuracy: 87%
+   - Additional Info: 
+    * Reducing the image size improved the model's performance, achieving higher accuracy on both the validation and test sets.
+
+5. Model_train_5:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 80x80x3
+   - Epochs: 150
+   - Train Accuracy: 88%
+   - Validation Accuracy: 89%
+   - Test Accuracy: 85%
+   - Additional Info: 
+    * Increasing the number of epochs led to slightly improved training accuracy 
+      but did not have a significant impact on validation and test accuracies.
+
+6. Model_train_6:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 80x80x3
+   - Epochs: 200
+   - Train Accuracy: 89%
+   - Validation Accuracy: 88%
+   - Test Accuracy: 88%
+   - Additional Info: 
+    * Further increasing the epochs resulted in slightly improved training accuracy, 
+      but the validation and test accuracies did not show substantial improvement.
+
+7. Model_train_7:
+   - Training Date: 17th July 2023
+   - Training Data: 25000 images (12500 of dogs and 12500 of cats)
+   - Image Size: 80x80x3
+   - Epochs: 300
+   - Train Accuracy: 90%
+   - Validation Accuracy: 90%
+   - Test Accuracy: 90%
+   - Additional Info: 
+    * Continuing to train the model for more epochs eventually resulted in higher accuracy across all datasets, 
+      with the model achieving 90% accuracy on the training, validation, and test sets.

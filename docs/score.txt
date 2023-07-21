@@ -1,0 +1,10 @@
+model_train_7:
+
+
+* Note : 
+        The test data is not test1 folder data is is the data which 
+        is seprated from train data to do testing of dataset.
+
+TRAIN DATA: loss: 0.2119 - accuracy: 0.9096 
+VAL DATA: val_loss: 0.2250 - val_accuracy: 0.9030
+TEST DATA : loss: 0.2136 - accuracy: 0.9078
