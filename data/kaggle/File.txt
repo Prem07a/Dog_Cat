@@ -1,1 +1,5 @@
-Add kaggle.json file here.
+>> Add kaggle.json file here i.e  `data/kaggle`
+
+or 
+
+>> Just add the required information in the provided kaggle.json file
