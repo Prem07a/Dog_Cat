@@ -8,7 +8,7 @@ The Cat and Dog Image Classifier is a deep learning project that aims to classif
 
 ### About Me:
 
-My name is Prem Gaikwad, and I am currently pursuing my Bachelor's degree in Electronics and Telecommunication Engineering at PICT. I am passionate about artificial intelligence and machine learning, with a particular interest in data science and analytics. I love to learn by working on hands-on projects, and this Cat and Dog Image Classifier project is one such endeavor where I am learning about CNNs and image classification.
+My name is Prem Gaikwad, and I am currently pursuing my Bachelor's degree in Electronics and Telecommunication Engineering at PICT. I am passionate about `Artificial Intelligence` and `Machine Learning`, with a particular interest in `Data Science` and `Analytics`. I love to learn by working on hands-on projects, and this Cat and Dog `Image Classifier` project is one such endeavor where I am learning about CNNs and image classification.
 
 ### Technologies and Libraries Used:
 
