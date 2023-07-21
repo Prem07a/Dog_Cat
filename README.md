@@ -36,59 +36,6 @@ The model is compiled with the Adam optimizer and sparse categorical cross-entro
 
 Once the model is trained, it is saved for future use. The Streamlit application allows users to upload an image through the file uploader. After uploading the image, the application performs the necessary preprocessing, resizes the image, and passes it to the trained model for prediction. The model predicts whether the uploaded image contains a cat or a dog, and the predicted class and confidence score are displayed to the user.
 
-
-### Folder Structure
-
-├───code                          <!-- Directory for project's code -->
-│   ├───docs                      <!-- Documentation for the code -->
-│   ├───python                    <!-- Python code for the project -->
-│   │   ├───data processing       <!-- Code related to data processing -->
-│   │   ├───docs                  <!-- Documentation for Python code -->
-│   │   └───model experiment      <!-- Code for model experimentation -->
-│   ├───website                   <!-- Code for the project's website -->
-│   │   ├───docs                  <!-- Documentation for the website code -->
-│   │   ├───static                <!-- Static files for the website (e.g., images, CSS, videos) -->
-│   │   │   ├───images
-│   │   │   │   └───css
-│   │   │   └───videos
-│   │   ├───templates            <!-- Templates for the website -->
-│   │   └───__pycache__           <!-- Python's __pycache__ directory -->
-│   └───__pycache__               <!-- Python's __pycache__ directory -->
-
-├───data                          <!-- Data used in the project -->
-│   ├───images                    <!-- Images data -->
-│   ├───kaggle                    <!-- Kaggle datasets -->
-│   ├───processed data            <!-- Processed data for modeling -->
-│   ├───raw data                  <!-- Raw data for training and testing -->
-│   │   ├───test1
-│   │   └───train
-│   ├───result                    <!-- Result data from experiments -->
-│   └───zip file                  <!-- Zip files containing data -->
-
-├───docs                          <!-- General project documentation -->
-└───models                        <!-- Trained model directories -->
-    ├───docs                      <!-- Documentation related to models -->
-    ├───model_train_1             <!-- Trained model 1 -->
-    │   ├───assets               <!-- Model assets -->
-    │   └───variables            <!-- Model variables -->
-    ├───model_train_2             <!-- Trained model 2 -->
-    │   ├───assets               <!-- Model assets -->
-    │   └───variables            <!-- Model variables -->
-    ├───model_train_3             <!-- Trained model 3 -->
-    │   └───variables            <!-- Model variables -->
-    ├───model_train_4             <!-- Trained model 4 -->
-    │   ├───assets               <!-- Model assets -->
-    │   └───variables            <!-- Model variables -->
-    ├───model_train_5             <!-- Trained model 5 -->
-    │   ├───assets               <!-- Model assets -->
-    │   └───variables            <!-- Model variables -->
-    ├───model_train_6             <!-- Trained model 6 -->
-    │   ├───assets               <!-- Model assets -->
-    │   └───variables            <!-- Model variables -->
-    └───model_train_7             <!-- Trained model 7 -->
-        ├───assets               <!-- Model assets -->
-        └───variables            <!-- Model variables -->
-
 ### Git Commands:
 
 To clone the project repository, use the following Git command:
