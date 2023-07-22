@@ -30,27 +30,17 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Image Classification</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
+    <head>
+        <title>Image Classification</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>    
 <body class="gradient-background">
-    <header>
-        <h1>Image Classification App</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="https://prem07a.github.io/Porfoliio/" target="_blank">My Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="container">
         <h1 id="heading">Image Classification</h1>
         <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showImageUploadedMessage()">
             <div class="btn-container">
-                <div class="upload-btn-wrapper">
+                <div class="upload-btn-wrapper">                   
                     <button class="btn" id="uploadBtn"><i class="fas fa-cloud-upload-alt"></i> Upload or Drag & Drop Image</button>
                     <input type="file" name="file" id="fileInput" onchange="showImageUploadedMessage()">
                 </div>
