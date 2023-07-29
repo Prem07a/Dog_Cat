@@ -13,7 +13,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="code/website/templates")
 app.mount("/static", StaticFiles(directory="code/website/static"), name="static")  # Serve the static folder
 
-MODEL = tf.keras.models.load_model("models/model_train_7")
+MODEL = tf.keras.models.load_model("models/model_train_8")
 CLASS_NAMES = ['CAT', 'DOG']
 
 def read_file_as_image(data) -> np.ndarray:
