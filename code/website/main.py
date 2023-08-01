@@ -1,7 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-import uvicorn
 import numpy as np
 from io import BytesIO
 from PIL import Image
