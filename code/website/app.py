@@ -20,6 +20,15 @@ def read_file_as_image(data) -> np.ndarray:
     return image
 
 def predict(image):
+    """
+    Performs image classification on the provided image.
+
+    Args:
+        image (np.ndarray): The image data as a numpy array.
+
+    Returns:
+        tuple: A tuple containing the predicted class and confidence.
+    """
     # Resize the image to (80, 80) as expected by the model
     image = tf.image.resize(image, (80, 80))
     img_batch = np.expand_dims(image, 0)
@@ -31,6 +40,13 @@ def predict(image):
     return predicted_class, confidence
 
 def main():
+    """
+    Main function to create the Image Classification Web App.
+
+    This function sets up the Streamlit web app and allows users to upload an image.
+    When the "Predict" button is pressed, it performs image classification and displays
+    the predicted class and confidence score on the web app.
+    """
     st.title("Image Classification Web App")
 
     uploaded_file = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])

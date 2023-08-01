@@ -1,0 +1,22 @@
+app.py: This Python script is a web application built using Streamlit, a framework for creating data apps with minimal effort. The web app allows users to upload an image (in JPEG or PNG format), and it performs image classification using a pre-trained deep learning model.
+
+Functions:
+
+read_file_as_image(data): This function takes raw file data (BytesIO) as input, reads the uploaded file, and converts it into a numpy array representing the image.
+
+predict(image): This function takes a numpy array representing an image as input and performs image classification using the pre-trained deep learning model (MODEL). It resizes the image to (80, 80) pixels (the expected input size of the model), makes predictions on the resized image, and returns the predicted class (either 'CAT' or 'DOG') and the confidence score.
+
+Main Function:
+
+The main() function is the entry point of the web application. It creates the Streamlit web app and sets the title as "Image Classification Web App." It includes a file uploader, allowing users to upload an image.
+
+When the user uploads an image, it displays the uploaded image with a caption "Uploaded Image" and adds a "Predict" button. When the "Predict" button is pressed, the predict() function is called to perform image classification. The predicted class and confidence score are then displayed on the web app.
+
+The web app runs the main() function when the script is executed.
+
+Overall, the web app provides a simple interface for users to upload an image and obtain predictions about whether the image is a cat or a dog, along with the confidence score of the prediction.
+
+
+
+
+
