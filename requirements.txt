@@ -2,6 +2,7 @@
 numpy
 pandas
 uvicorn
+streamlit 
 
 # Visualization
 matplotlib
@@ -23,5 +24,3 @@ jupyter
 
 # Miscellaneous
 joblib
-fastapi
-python-multipart
