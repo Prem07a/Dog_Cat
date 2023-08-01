@@ -1,0 +1,52 @@
+import streamlit as st
+import numpy as np
+from PIL import Image
+import tensorflow as tf
+
+MODEL = tf.keras.models.load_model("./models/model_train_8")
+CLASS_NAMES = ['CAT', 'DOG']
+
+def read_file_as_image(data) -> np.ndarray:
+    """
+    Reads the uploaded file data and converts it into a numpy array (image representation).
+
+    Args:
+        data (BytesIO): The raw bytes of the uploaded file.
+
+    Returns:
+        np.ndarray: The image data as a numpy array.
+    """
+    image = np.array(Image.open(data))
+    return image
+
+def predict(image):
+    # Resize the image to (80, 80) as expected by the model
+    image = tf.image.resize(image, (80, 80))
+    img_batch = np.expand_dims(image, 0)
+    predictions = MODEL.predict(img_batch)
+
+    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+    confidence = ((np.max(predictions[0]) * 100 * 100) // 1) / 100
+
+    return predicted_class, confidence
+
+def main():
+    st.title("Image Classification Web App")
+
+    uploaded_file = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
+
+    if uploaded_file is not None:
+        image = read_file_as_image(uploaded_file)
+
+        # Add CSS style to display the image with padding from the left
+        st.image(image, caption=f"Uploaded Image", width=250, use_column_width=False, clamp=True)
+
+        # Add a "Predict" button to trigger the prediction
+        if st.button("Predict"):
+            predicted_class, confidence = predict(image)
+
+            st.write(f"Class: {predicted_class}")
+            st.write(f"Confidence: {confidence}%")
+
+if __name__ == "__main__":
+    main()
