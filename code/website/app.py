@@ -47,7 +47,7 @@ def main():
     When the "Predict" button is pressed, it performs image classification and displays
     the predicted class and confidence score on the web app.
     """
-    st.title("Image Classification Web App")
+    st.title("Dog & Cat Image Classification")
 
     uploaded_file = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
 
